@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
             requestQueue = Volley.newRequestQueue(getApplicationContext());
         }
         recyclerView = findViewById(R.id.recyclerView);
-        LinearLayoutManager layoutManager = new LinearLayoutManager
-                (this, LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
         adapter = new MovieAdapter();

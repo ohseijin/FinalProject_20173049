@@ -23,7 +23,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position)
     {
         Movie item = items.get(position);
-        viewHolder.setItems(item);
+        viewHolder.setItem(item);
     }
     @Override
     public int getItemCount()
@@ -52,10 +52,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             textView2 = itemView.findViewById(R.id.textView2);
             textView3 = itemView.findViewById(R.id.textView3);
         }
-        public void setItems(Movie item){
+        public void setItem(Movie item){
             textView.setText(item.movieNm);
-            textView.setText(item.audiCnt + " 명");
-            textView.setText(item.rank + " 위");
+            textView2.setText(item.audiCnt + " 명");
+            textView3.setText(item.rank + " 위");
         }
 
     }
