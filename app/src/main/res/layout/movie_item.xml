@@ -20,43 +20,75 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
+
             <ImageView
                 android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_height="85dp"
                 android:padding="5dp"
                 android:src="@drawable/movie"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="순위"
+                    android:textColor="#FFFF0000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@+id/textView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="제목"
                     android:textSize="22sp"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp"
+                    android:gravity="right"
+                    android:text="매출비율"
+                    android:textColor="#6AA327"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
                 <TextView
                     android:id="@id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="10dp"
+                    android:paddingTop="5dp"
                     android:gravity="right"
-                    android:text="관객 수"
-                    android:textColor="#FF0000FF"
-                    android:textSize="16sp"/>
+                    android:text="일일 관객 수"
+                    android:textColor="#2196F3"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
                 <TextView
-                    android:id="@id/textView3"
+                    android:id="@id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="10dp"
+                    android:paddingTop="5dp"
                     android:gravity="right"
-                    android:text="순위"
-                    android:textColor="#FFFF0000"
-                    android:textSize="16sp"/>
+                    android:text="누적 관객 수"
+                    android:textColor="#6D3AC8"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
             </LinearLayout>
         </LinearLayout>
 

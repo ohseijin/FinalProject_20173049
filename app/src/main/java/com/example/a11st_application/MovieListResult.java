@@ -7,4 +7,5 @@ public class MovieListResult {
     String showRange;
 
     ArrayList<Movie> dailyBoxOfficeList = new ArrayList<Movie>();
+    ArrayList<Movie> weeklyBoxOfficeList = new ArrayList<Movie>();
 }

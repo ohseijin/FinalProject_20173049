@@ -4,11 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -26,6 +33,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     EditText editText;
     TextView textView;
+    DatePickerDialog.OnDateSetListener callbackMethon;
 
     static RequestQueue requestQueue;
 
@@ -33,9 +41,13 @@ public class MainActivity extends AppCompatActivity {
     MovieAdapter adapter;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.InitalLizeListenner();
+
 
         editText = findViewById(R.id.xeditText);
         textView = findViewById(R.id.textView);
@@ -45,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 makeRequest();
+            }
+        });
+        Button dateButton = findViewById(R.id.dateButton);
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dateProcess(v);
             }
         });
 
@@ -57,6 +76,33 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new MovieAdapter();
         recyclerView.setAdapter(adapter);
+
+        ImageView backButton = (ImageView) findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("message", "result message is OK!");
+
+                setResult(Activity.RESULT_OK, resultIntent);
+                finish();
+            }
+        });
+    }
+    public void InitalLizeListenner(){
+        callbackMethon = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String year1 = String.valueOf(year);
+                String month1 = String.valueOf(month);
+                String dayOfMonth1 = String.valueOf(dayOfMonth);
+                String date = year1 + month1 + dayOfMonth1;
+                editText.setText("https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=ad9938cada5685b4613c747d4cb31e01targetDt=" + date);
+            }
+        };
+    }
+    public void dateProcess(View v){
+        DatePickerDialog dialog = new DatePickerDialog(this, callbackMethon, 2021, 11, 10);
+        dialog.show();
     }
     public void makeRequest() {
         String url = editText.getText().toString();
@@ -106,4 +152,5 @@ public class MainActivity extends AppCompatActivity {
         }
         adapter.notifyDataSetChanged();
     }
+
 }
