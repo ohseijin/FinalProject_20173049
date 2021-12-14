@@ -48,6 +48,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         TextView textView3;
         TextView textView4;
         TextView textView5;
+        TextView textView6;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -56,13 +57,15 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             textView3 = itemView.findViewById(R.id.textView3);
             textView4 = itemView.findViewById(R.id.textView4);
             textView5 = itemView.findViewById(R.id.textView5);
+            textView6 = itemView.findViewById(R.id.textView6);
         }
         public void setItem(Movie item){
             textView.setText(item.movieNm);
-            textView2.setText("일일관객수 : " + item.audiCnt + "명");
+            textView2.setText("관객수 : " + item.audiCnt + "명");
             textView4.setText("누적관객수 : " + item.audiAcc + "명");
             textView5.setText("매출비율 : " + item.salesShare + "%");
             textView3.setText(item.rank + " 위");
+            textView6.setText("개봉일 : " + item.openDt);
 
         }
 

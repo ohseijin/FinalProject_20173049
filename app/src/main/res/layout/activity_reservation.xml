@@ -104,7 +104,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:onClick="imageChange"
-            android:text="포스터 더보기" />
+            android:text="포스터 더보기"
+            android:textStyle="bold"/>
     </LinearLayout>
 
         <LinearLayout

@@ -56,16 +56,29 @@
                     android:textStyle="bold"/>
 
                 <TextView
+                    android:id="@id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp"
+                    android:gravity="right"
+                    android:text="개봉일"
+                    android:textColor="#FF7700"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <TextView
                     android:id="@id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingRight="10dp"
-                    android:paddingTop="10dp"
+                    android:paddingTop="5dp"
                     android:gravity="right"
                     android:text="매출비율"
                     android:textColor="#6AA327"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
+
                 <TextView
                     android:id="@id/textView2"
                     android:layout_width="match_parent"
@@ -73,10 +86,11 @@
                     android:paddingRight="10dp"
                     android:paddingTop="5dp"
                     android:gravity="right"
-                    android:text="일일 관객 수"
+                    android:text="관객 수"
                     android:textColor="#2196F3"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
+
                 <TextView
                     android:id="@id/textView4"
                     android:layout_width="match_parent"
@@ -88,6 +102,8 @@
                     android:textColor="#6D3AC8"
                     android:textSize="14sp"
                     android:textStyle="bold"/>
+
+
 
             </LinearLayout>
         </LinearLayout>
